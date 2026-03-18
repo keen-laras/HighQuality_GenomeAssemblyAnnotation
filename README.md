@@ -1,4 +1,4 @@
-# PublicPipeline_GenomeAssembly
+# High Quality Genome Assembly & Annotation
 A guide on genome assembly study. The whole pipeline contains assembly - polishing - scaffolding - repeat annotation - genome annotation
 
 ## 1. Genome Assembly - [NextDeNovo (version 2.5.2)](https://github.com/Nextomics/NextDenovo)
