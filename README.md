@@ -1,5 +1,5 @@
-# High Quality Genome Assembly & Annotation
-A guide on genome assembly study. The whole pipeline contains assembly - polishing - scaffolding - repeat annotation - genome annotation
+# High Quality Genome Assembly & Annotation + Evolution Analyses
+A guide on genome assembly study. The whole pipeline contains assembly - polishing - scaffolding - repeat annotation - genome annotation and how to use the data for evolution analyses
 
 ## 1. Genome Assembly - [NextDeNovo (version 2.5.2)](https://github.com/Nextomics/NextDenovo)
 
