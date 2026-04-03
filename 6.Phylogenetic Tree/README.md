@@ -20,6 +20,17 @@ _(optional)_ Each sequence ID usually contains something like **>SpeciesA_geneID
     `bash 6b.edit_geneID.sh`
 
 ### C. Generating gene trees with [IQ-TREE (version 3.0.1)](https://iqtree.github.io/doc/Tutorial)
+We used CDS alignment instead of protein alignment for further analyses, please proceed with your needs. CDS are used to obtain more evolutionary information as it captured both synonymous and nonsynonymous mutation that protein alignments couldn't.
+
+    `python 6c.convert_MAFFT_to_CDS.py`
+
+Run IQ-Tree 
+
+    `iqtree -s {cds.align}.fa -m MFP -bb 1000 -bnni -nt 1 -pre {iqtree_output}`
+
+and check for corrupted trees
+
+    `bash 6c.check_iqtreeRun.sh`
 
 
 
