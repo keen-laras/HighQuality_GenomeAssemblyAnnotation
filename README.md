@@ -7,7 +7,9 @@ A guide on genome assembly study. The whole pipeline contains assembly - polishi
 This project uses **NextDenovo** to assemble a draft genome from raw **CycloneSEQ** reads by:
 
 a. Performing read correction to reduce sequencing errors
+
 b. Constructing a consensus assembly from corrected reads
+
 c. Running in parallel for improved performance and scalability
 
 ## 2. Genome Polish [🔗](https://github.com/keen-laras/HighQualityAssembly_EvolutionAnalyses/tree/main/2.Genome%20Polishing)
@@ -16,7 +18,9 @@ c. Running in parallel for improved performance and scalability
 This pipeline applies **NextPolish** to iteratively refine a draft genome by:
 
 a. Correcting errors using short-read data (high accuracy)
+
 b. Refining structure using long-read data (long-range continuity)
+
 c. Running multiple polishing rounds for optimal results
 
 
@@ -26,9 +30,13 @@ c. Running multiple polishing rounds for optimal results
 This pipeline performs:
 
 a. Hi-C reads alignment **(Bowtie2)** for contact data by **HiC-Pro or Chromap**
+
 b. Scaffolding using **Hi-C/Pore-C** contact data
+
 c. Contig ordering and orientation with **YaHS**
+
 d. Contact map generation for visualization
+
 e. Manual curation support via **Juicebox** (.hic format)
 
 ## 4. Repeat Annotation [🔗](https://github.com/keen-laras/HighQualityAssembly_EvolutionAnalyses/tree/main/4.Repeat%20Annotation) 
@@ -37,9 +45,13 @@ e. Manual curation support via **Juicebox** (.hic format)
 This pipeline performs:
 
 a. Repeat annotation using **RepeatMasker** (multiple libraries)
+
 b. Soft-masked genome processing (lowercase regions)
+
 c. Extraction of repeat intervals (BED format)
+
 d. Merging repeat annotations from multiple sources
+
 e. Final hard-masked genome generation (N-masked FASTA)
 
 ## 5. Genome Annotation [🔗](https://github.com/keen-laras/HighQualityAssembly_EvolutionAnalyses/tree/main/5.Genome%20Annotation) 
@@ -48,6 +60,7 @@ e. Final hard-masked genome generation (N-masked FASTA)
 This pipeline integrates:
 
 a. **BRAKER** → predicts genes directly from genomic sequence
+
 b. **EviAnn** → homology-based annotation using protein evidence from related species
 
 ## 6. Phylogenetic Tree [🔗](https://github.com/keen-laras/HighQualityAssembly_EvolutionAnalyses/tree/main/6.Phylogenetic%20Tree)
@@ -56,4 +69,5 @@ b. **EviAnn** → homology-based annotation using protein evidence from related 
 The workflow is designed for:
 
 a. Orthologous gene sets
+
 b. Coding sequence (CDS) alignment
