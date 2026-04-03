@@ -49,3 +49,11 @@ This pipeline integrates:
 
 a. **BRAKER** → predicts genes directly from genomic sequence
 b. **EviAnn** → homology-based annotation using protein evidence from related species
+
+## 6. Phylogenetic Tree [🔗](https://github.com/keen-laras/HighQualityAssembly_EvolutionAnalyses/tree/main/6.Phylogenetic%20Tree)
+### This directory contains the pipeline used to construct gene-based phylogenetic trees for comparative genomic analyses.
+
+The workflow is designed for:
+
+a. Orthologous gene sets
+b. Coding sequence (CDS) alignment
