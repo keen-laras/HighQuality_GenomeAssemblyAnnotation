@@ -1,56 +1,50 @@
 # High Quality Genome Assembly & Annotation + Evolution Analyses
 A guide on genome assembly study. The whole pipeline contains assembly - polishing - scaffolding - repeat annotation - genome annotation and how to use the data for evolution analyses
 
-## 1. Genome Assembly - [NextDeNovo (version 2.5.2)](https://github.com/Nextomics/NextDenovo)
+## 1. [Genome Assembly](https://github.com/keen-laras/HighQualityAssembly_EvolutionAnalyses/tree/main/1.Genome%20Assembly)
+High-quality genome assembly from long-read sequencing data requires efficient error correction and accurate graph-based assembly.
 
-Input your files and parameters, then run the software with this command
+This project uses NextDenovo to assemble a draft genome from raw CycloneSEQ reads by:
 
-`NextDenovo nextdenovo_config.txt`
+a. Performing read correction to reduce sequencing errors
+b. Constructing a consensus assembly from corrected reads
+c. Running in parallel for improved performance and scalability
 
+## 2. [Genome Polish](https://github.com/keen-laras/HighQualityAssembly_EvolutionAnalyses/tree/main/2.Genome%20Polishing)
+Genome assemblies generated from long-read sequencing technologies (e.g., CycloneSEQ or PacBio) often contain base-level errors such as insertions, deletions, and mismatches.
 
+This project applies NextPolish to iteratively refine a draft genome by:
 
-## 2. Genome Polish - [NextPolish (version 1.4.1)](https://github.com/Nextomics/NextDenovo) 
-
-Input your files and parameters, then run the software with this command
-
-`nextPolish nextpolish_config.txt`
-
-
-
-## 3. Scaffolding - [YaHS](https://github.com/c-zhou/yahs), [Juicer](https://github.com/aidenlab/juicer) & [Juicer_tools](https://github.com/aidenlab/JuicerTools)
-
-Run alignments using,
-
-`bash run_bowtie2.sh` then `run scaffolding_script1.sh`
-
-or
-
-`bash run_chromap.sh` then `run scaffolding_script2.sh`
+a. Correcting errors using short-read data (high accuracy)
+b. Refining structure using long-read data (long-range continuity)
+c. Running multiple polishing rounds for optimal results
 
 
+## 3. [Scaffolding](https://github.com/keen-laras/HighQualityAssembly_EvolutionAnalyses/tree/main/3.Scaffolding)
+Draft genome assemblies are often fragmented into contigs. To achieve chromosome-level assemblies, long-range interaction data such as Hi-C or Pore-C can be used to order and orient these contigs.
 
-## 4. Repeat Annotation - [RepeatMasker (version 4.2.2)](https://github.com/Dfam-consortium/RepeatMasker) 
+This pipeline performs:
 
-- Run software depending on your library
+a. Scaffolding using Hi-C/Pore-C contact data
+b. Contig ordering and orientation with YaHS
+c. Contact map generation for visualization
+d. Manual curation support via Juicebox (.hic format)
 
-`bash run_denovo.sh` or `bash run_lib.sh`
+## 4. [Repeat Annotation](https://github.com/keen-laras/HighQualityAssembly_EvolutionAnalyses/tree/main/4.Repeat%20Annotation) 
+Repetitive elements are a major component of eukaryotic genomes and can interfere with downstream analyses such as gene prediction and alignment.
 
-- Mask output file
-  1. `perl extract_lowercase_bed.pl /path/to/repeatmasker/{sample}.fa.masked {output}.nmasked.bed`
-  2. `cat /denovo/{output}.nmasked.bed /dfam_lib/{output}.nmasked.bed > {output}_combined_nmasked.raw.bed sort -k1,1 -k2,2n {output}_combined_nmasked.raw.bed > {output}_combined_nmasked.sorted.bed`
-  3. `/bedtools/2.29.2/bin/mergeBed -i {output}_combined_nmasked.sorted.bed > {output}_combined_nmasked.merged.bed`
-  4. `/bedtools/2.29.2/bin/maskFastaFromBed -mc N -fi /path/to/{sample}.fa -fo {output}.FINAL.masked.fa -bed {output}_combined_nmasked.merged.bed`
+This pipeline performs:
 
+a. Repeat annotation using RepeatMasker (multiple libraries)
+b. Soft-masked genome processing (lowercase regions)
+c. Extraction of repeat intervals (BED format)
+d. Merging repeat annotations from multiple sources
+e. Final hard-masked genome generation (N-masked FASTA)
 
+## 5. [Genome Annotation](https://github.com/keen-laras/HighQualityAssembly_EvolutionAnalyses/tree/main/5.Genome%20Annotation) 
+Accurate genome annotation requires combining multiple lines of evidence.
 
-## 5. Genome Annotation - [EviAnn (version 2.0.4)](https://github.com/alekseyzimin/EviAnn_release) & [BRAKER (version 3.0.8)](https://github.com/Gaius-Augustus/BRAKER)
+This pipeline integrates:
 
-- Run both software
-
-`bash run_eviann.sh` and `bash run_braker.sh`
-
-- Merge both pipeline's output
-
-`bash run_mergeOutput.sh`
-
-
+1. BRAKER → predicts genes directly from genomic sequence
+b. EviAnn → homology-based annotation using protein evidence from related species
