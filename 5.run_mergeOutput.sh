@@ -31,7 +31,7 @@ cat braker.kept.prot.fa pep_removed_redundant.fa > all.pep.fa
 
 # 7. create a gff file, merging both retained annotation
 /share/app/bedtools/2.29.2/bin/bedtools intersect -f 0.99 -a /path/to/{braker_output}.gtf -b braker.kept.bed -wa -u > braker.kept.gff
-python cleanup_braker_gtf.py braker.kept.gff braker.kept_fixed.gff
+python 5.cleanup_braker_gtf.py braker.kept.gff braker.kept_fixed.gff
 
 # modify evi's gff
 grep ">" pep_removed_redundant.fa | sed 's/>//g' > evi.keptID.txt
