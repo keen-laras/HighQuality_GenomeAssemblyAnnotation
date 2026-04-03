@@ -71,3 +71,21 @@ The workflow is designed for:
 a. Orthologous gene sets
 
 b. Coding sequence (CDS) alignment
+
+## 7. QUIBL-ABBA Analyses [🔗](https://github.com/keen-laras/HighQualityAssembly_EvolutionAnalyses/tree/main/7.QUIBL-ABBA%20Analyses)
+### This module focuses on detecting and characterizing introgression (gene flow between species) using two complementary approaches:
+
+a. **ABBA-BABA (D-statistics)** — tests for the presence of introgression
+
+b. **QuIBL **(Quartet-based Inference of Branch Lengths) — distinguishes introgression from incomplete lineage sorting (ILS)
+
+Together, these methods provide a robust framework for identifying discordant phylogenetic signals and inferring their evolutionary causes.
+
+## 8. Synteny Analyses [🔗](https://github.com/keen-laras/HighQualityAssembly_EvolutionAnalyses/tree/main/8.Synteny%20Analyses)
+
+This module performs genome-wide synteny analysis and visualization to investigate chromosomal conservation and structural evolution across species.
+
+It integrates:
+
+a. **GeneSpace** → detection of syntenic blocks and conserved genomic regions
+b. **GenomeSyn** → visualization of synteny relationships across genomes
