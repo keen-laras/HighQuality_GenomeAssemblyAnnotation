@@ -2,7 +2,7 @@
 ## A. QuIBL - ABBA analyses
 This analyses is done to investigate trees that might undergo incomplete lineage sorting (ILS) or introgression during its evolution line.
 
-    bash 7.ILS_introgression.sh
+    bash 7a.ILS_introgression.sh
     
 ## B. Discordant tree analyses
 This analyses is done to compute the contribution of discordance genes to each nodes
