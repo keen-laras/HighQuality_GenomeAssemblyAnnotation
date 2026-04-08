@@ -33,7 +33,7 @@ with open(file3) as f:
             gene_to_coord[gene] = (chr_, start, end)
 
 # output
-with open("genediscordance.txt", "w") as out:
+with open("geneDiscordance.txt", "w") as out:
     out.write("HOG_ID\tGeneID\tStatus\tChr\tStart\tEnd\n")
 
     for hog in hog_to_gene:
