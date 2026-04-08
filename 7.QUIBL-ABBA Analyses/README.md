@@ -19,3 +19,20 @@ This analyses is done to compute the contribution of discordance genes to each n
     python 7b.quartet_rf_classify.py --confi 7b.node.confi --gene "iqtree_output/*tree" --out node.tsv
     python 7b.mergeCoords_to_genes.py
     python 7b.addValue.py 
+
+## C. Visualization
+Discordant tree can be visualized by [karyoploteR](https://bernatgel.github.io/karyoploter_tutorial/) or distribution plot. Distribution plot of neighboring discordance genes and random genes.
+
+For karyoploteR:
+
+        # Create sum.len "Chr    Len"
+        # Example
+        # Chr1 344980414
+        # Chr2 276180483
+        # Chr3 211116089
+        
+        Rscript 7c.karyoploter.R sum.len geneDiscordance.value.txt geneDiscordance.value.pdf
+
+For distribution plot:
+
+        python 7c.countDistance.py
