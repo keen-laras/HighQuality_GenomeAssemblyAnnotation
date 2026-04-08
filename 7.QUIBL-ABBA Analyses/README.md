@@ -25,14 +25,14 @@ Discordant tree can be visualized by [karyoploteR](https://bernatgel.github.io/k
 
 For karyoploteR:
 
-        # Create sum.len "Chr    Len"
-        # Example
-        # Chr1 344980414
-        # Chr2 276180483
-        # Chr3 211116089
+    # Create sum.len "Chr    Len"
+    # Example
+    # Chr1 344980414
+    # Chr2 276180483
+    # Chr3 211116089
         
-        Rscript 7c.karyoploter.R sum.len geneDiscordance.value.txt geneDiscordance.value.pdf
+    Rscript 7c.karyoploter.R sum.len geneDiscordance.value.txt geneDiscordance.value.pdf
 
 For distribution plot:
 
-        python 7c.countDistance.py
+    python 7c.countDistance.py
