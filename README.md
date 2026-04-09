@@ -1,5 +1,5 @@
 # High Quality Genome Assembly & Annotation + Evolution Analyses
-A guide on genome assembly study. The whole pipeline contains assembly - polishing - scaffolding - repeat annotation - genome annotation and how to use the data for evolution analyses
+A guide on genome assembly and evolution study. The whole pipeline contains assembly - polishing - scaffolding - repeat annotation - genome annotation and how to use the data for evolution analyses
 
 ## 1. Genome Assembly [🔗](https://github.com/keen-laras/HighQualityAssembly_EvolutionAnalyses/tree/main/1.Genome%20Assembly)
 ### High-quality genome assembly from long-read sequencing data requires efficient error correction and accurate graph-based assembly.
